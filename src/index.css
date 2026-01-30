@@ -153,9 +153,8 @@ button {
 @media (max-width: 900px) {
   .app-container.split-layout {
     flex-direction: column;
-    height: auto;
-    overflow-x: hidden;
-    overflow-y: auto;
+    height: 100vh;
+    overflow: auto;
   }
 
   .left-panel {
