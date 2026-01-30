@@ -1,0 +1,79 @@
+.details {
+    padding: 8rem 2rem;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.detail-card {
+    padding: 3rem;
+    background-color: var(--off-white);
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+}
+
+.detail-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border-color: var(--rustic-gold);
+}
+
+.detail-card h3 {
+    color: var(--primary-teal);
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.venue-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--coffee-brown);
+    margin-bottom: 0.5rem;
+}
+
+.address {
+    margin-bottom: 1rem;
+}
+
+.time {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--rustic-gold);
+    margin-bottom: 2rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--rustic-gold);
+    color: var(--rustic-gold);
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--rustic-gold);
+    color: white;
+}
+
+.small {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 1rem;
+}

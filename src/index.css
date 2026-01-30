@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@100..900&family=Cinzel:wght@400..900&display=swap');
+
+:root {
+  --primary-teal: #008080;
+  --rustic-gold: #C5A059;
+  --coffee-brown: #6F4E37;
+  --white: #FFFFFF;
+  --off-white: #F9F7F2;
+  --accent-teal: #005F5F;
+  --soft-gold: #D4AF37;
+
+  --font-heading: 'Playfair Display', serif;
+  --font-serif-alt: 'Cinzel', serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--off-white);
+  color: var(--coffee-brown);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.secondary-heading {
+  font-family: var(--font-serif-alt);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: var(--font-body);
+}
+
+/* Split Layout Styles */
+.app-container.split-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.left-panel {
+  flex: 1;
+  height: 100vh;
+  position: relative;
+}
+
+.right-panel {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: var(--white);
+  scroll-behavior: smooth;
+}
+
+.scroll-content {
+  min-height: 100vh;
+}
+
+/* Footer */
+.footer {
+  padding: 4rem 1rem;
+  background-color: var(--coffee-brown);
+  color: var(--off-white);
+  text-align: center;
+}
+
+.footer-initials {
+  font-family: var(--font-serif-alt);
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+  color: var(--rustic-gold);
+}
+
+.footer-date {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+/* Base Component Adjustments for Split View */
+.right-panel .hero {
+  height: 90vh;
+  background-image: none !important;
+  background-color: var(--off-white);
+  color: var(--coffee-brown);
+}
+
+.right-panel .hero .names {
+  color: var(--primary-teal);
+}
+
+.right-panel .hero .secondary-heading {
+  color: var(--coffee-brown);
+}
+
+.right-panel .hero .date {
+  color: var(--rustic-gold);
+}
+
+.right-panel .hero-overlay {
+  display: none;
+}
+
+/* Common Animations */
+.animate-in {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .app-container.split-layout {
+    flex-direction: column;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .left-panel {
+    height: 50vh;
+    width: 100%;
+    position: relative;
+    flex: none;
+  }
+
+  .right-panel {
+    height: auto;
+    width: 100%;
+    overflow-y: visible;
+  }
+}
