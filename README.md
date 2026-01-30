@@ -1,16 +1,56 @@
-# React + Vite
+# Daniella & Prince Wedding Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautiful, responsive wedding invitation and RSVP website built with React and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Personalized RSVP Flow**: Guests can RSVP directly on the site.
+- **Dynamic Countdown**: Real-time countdown to the big day.
+- **Interactive Map**: Integration with Google Maps for venue directions.
+- **Gallery**: Beautifully curated photo galleries of the couple.
+- **Personalized Invitation**: Automated PDF generation for guest invitation cards after RSVP.
+- **Google Sheets Integration**: RSVP data is automatically synced to a Google Sheet via Apps Script.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React, Vite, Vanilla CSS
+- **PDF Generation**: html2canvas, jspdf
+- **Backend/Data**: Google Apps Script, Google Sheets
+- **Hosting**: Vercel
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file based on `.env.example` and add your Google Apps Script URL:
+   ```env
+   VITE_APP_SCRIPT_URL=your_google_script_url
+   ```
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Deployment
+
+### GitHub
+1. Create a new repository on GitHub.
+2. Add the remote:
+   ```bash
+   git remote add origin <your-repo-url>
+   git branch -M main
+   git push -u origin main
+   ```
+
+### Vercel
+1. Sign in to [Vercel](https://vercel.com).
+2. Click **Add New Project**.
+3. Import your GitHub repository.
+4. Add the `VITE_APP_SCRIPT_URL` environment variable in the Vercel dashboard.
+5. Click **Deploy**.
