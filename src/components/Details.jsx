@@ -38,7 +38,7 @@ const Details = () => {
                     <div className="detail-card">
                         <h3 className="secondary-heading">Dress Code</h3>
                         <p>{WEDDING_DETAILS.dressCode}</p>
-                        <p className="small">The RSVP ends on {WEDDING_DETAILS.rsvpDeadline}</p>
+
                     </div>
                 </div>
             </div>

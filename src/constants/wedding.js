@@ -8,7 +8,7 @@ export const WEDDING_DETAILS = {
     fullNameBride: "Daniella Owusuwa Adjiei",
     fullNameGroom: "Prince Aduama",
     date: "August 8th, 2026",
-    displayDate: "08.2026",
+    displayDate: "08.08.26",
     time: "3:30 PM",
     venue: "Glass Garden Events Center",
     location: "Accra, Ghana",

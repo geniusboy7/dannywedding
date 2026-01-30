@@ -35,8 +35,8 @@ function App() {
           <div id="rsvp"><RSVP /></div>
 
           <footer className="footer">
-            <p className="footer-initials">{WEDDING_DETAILS.initials}</p>
-            <p className="footer-date">{WEDDING_DETAILS.date}</p>
+            <p className="footer-initials">P&D</p>
+            <p className="footer-date">{WEDDING_DETAILS.displayDate}</p>
           </footer>
         </div>
       </div>
