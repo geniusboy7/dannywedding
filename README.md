@@ -30,7 +30,7 @@ A beautiful, responsive wedding invitation and RSVP website built with React and
    ```
 3. Create a `.env` file based on `.env.example` and add your Google Apps Script URL:
    ```env
-   VITE_APP_SCRIPT_URL=your_google_script_url
+   VITE_RSVP_API_URL=your_google_script_url
    ```
 4. Run the development server:
    ```bash
@@ -52,5 +52,6 @@ A beautiful, responsive wedding invitation and RSVP website built with React and
 1. Sign in to [Vercel](https://vercel.com).
 2. Click **Add New Project**.
 3. Import your GitHub repository.
-4. Add the `VITE_APP_SCRIPT_URL` environment variable in the Vercel dashboard.
+4. Add the `VITE_RSVP_API_URL` environment variable in the Vercel dashboard.
+
 5. Click **Deploy**.
