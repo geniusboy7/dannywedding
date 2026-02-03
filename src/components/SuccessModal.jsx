@@ -66,6 +66,8 @@ const SuccessModal = ({ onClose, formData }) => {
         downloadCalendarFile('wedding-invite.ics', icsContent);
     };
 
+    const isAttending = formData.attending === 'yes';
+
     return (
         <div className="modal-overlay">
             <div className="modal-content animate-in">
@@ -74,54 +76,65 @@ const SuccessModal = ({ onClose, formData }) => {
                 <div className="success-header">
                     <div className="check-icon">✓</div>
                     <h2>Thank you for RSVPing!</h2>
-                    <p>We are so excited to see you at {WEDDING_DETAILS.venue}.</p>
+                    <p>{isAttending
+                        ? `We are so excited to see you at ${WEDDING_DETAILS.venue}.`
+                        : "We're sorry you couldn't join us."
+                    }</p>
                 </div>
 
-                <div className="invitation-download-section">
-                    <h3>Your Personalized Card</h3>
-                    <p className="personalized-msg">
-                        Thank you for accepting our Invitation, <strong>{formData.name}{formData.plusOne === 'yes' ? ' & guest' : ''}</strong>.
-                    </p>
+                {isAttending ? (
+                    <div className="invitation-download-section">
+                        <h3>Your Personalized Card</h3>
+                        <p className="personalized-msg">
+                            Thank you for accepting our Invitation, <strong>{formData.name}{formData.plusOne === 'yes' ? ' & guest' : ''}</strong>.
+                        </p>
 
-                    <div className="card-container">
-                        <div className="invitation-card" ref={cardRef}>
-                            <div className="card-border">
-                                <div className="card-inner">
-                                    <h4 className="card-header-text">Wedding Invitation</h4>
+                        <div className="card-container">
+                            <div className="invitation-card" ref={cardRef}>
+                                <div className="card-border">
+                                    <div className="card-inner">
+                                        <h4 className="card-header-text">Wedding Invitation</h4>
 
-                                    <div className="card-main-content">
-                                        <h2 className="card-names">{WEDDING_DETAILS.bride} & {WEDDING_DETAILS.groom}</h2>
-                                        <div className="card-details">
-                                            <p className="card-guest-name">For: {formData.name}{formData.plusOne === 'yes' ? ' & Guest' : ''}</p>
-                                            <div className="separator-line"></div>
-                                            <p className="card-date">{WEDDING_DETAILS.displayDate}</p>
-                                            <p className="card-time">{WEDDING_DETAILS.time}</p>
-                                            <p className="card-venue">{WEDDING_DETAILS.venue}</p>
-                                            <p className="card-location">{WEDDING_DETAILS.location}</p>
+                                        <div className="card-main-content">
+                                            <h2 className="card-names">{WEDDING_DETAILS.bride} & {WEDDING_DETAILS.groom}</h2>
+                                            <div className="card-details">
+                                                <p className="card-guest-name">For: {formData.name}{formData.plusOne === 'yes' ? ' & Guest' : ''}</p>
+                                                <div className="separator-line"></div>
+                                                <p className="card-date">{WEDDING_DETAILS.displayDate}</p>
+                                                <p className="card-time">{WEDDING_DETAILS.time}</p>
+                                                <p className="card-venue">{WEDDING_DETAILS.venue}</p>
+                                                <p className="card-location">{WEDDING_DETAILS.location}</p>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div className="card-footer">
-                                        <a href={WEDDING_DETAILS.mapsUrl} className="card-maps-link" target="_blank" rel="noopener noreferrer">
-                                            Get Directions
-                                        </a>
+                                        <div className="card-footer">
+                                            <a href={WEDDING_DETAILS.mapsUrl} className="card-maps-link" target="_blank" rel="noopener noreferrer">
+                                                Get Directions
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div className="modal-actions">
-                        <button onClick={downloadPDF} className="btn-action">
-                            <Download size={18} />
-                            Save PDF
-                        </button>
-                        <button onClick={addToCalendar} className="btn-action outline">
-                            <Calendar size={18} />
-                            Add to Calendar
-                        </button>
+                        <div className="modal-actions">
+                            <button onClick={downloadPDF} className="btn-action">
+                                <Download size={18} />
+                                Save PDF
+                            </button>
+                            <button onClick={addToCalendar} className="btn-action outline">
+                                <Calendar size={18} />
+                                Add to Calendar
+                            </button>
+                        </div>
                     </div>
-                </div>
+                ) : (
+                    <div className="decline-section">
+                        <p className="decline-msg">
+                            We appreciate you letting us know, <strong>{formData.name}</strong>. You'll be missed!
+                        </p>
+                    </div>
+                )}
             </div>
         </div>
     );

@@ -79,25 +79,29 @@ const RSVP = () => {
                         </div>
                     </div>
 
-                    <div className="form-group">
-                        <label>Bringing a Plus One?</label>
-                        <div className="radio-group">
-                            <label className="radio-label">
-                                <input type="radio" name="plusOne" value="yes" checked={formData.plusOne === 'yes'} onChange={handleChange} />
-                                <span>Yes</span>
-                            </label>
-                            <label className="radio-label">
-                                <input type="radio" name="plusOne" value="no" checked={formData.plusOne === 'no'} onChange={handleChange} />
-                                <span>No</span>
-                            </label>
-                        </div>
-                    </div>
+                    {formData.attending === 'yes' && (
+                        <>
+                            <div className="form-group animate-in">
+                                <label>Bringing a Plus One?</label>
+                                <div className="radio-group">
+                                    <label className="radio-label">
+                                        <input type="radio" name="plusOne" value="yes" checked={formData.plusOne === 'yes'} onChange={handleChange} />
+                                        <span>Yes</span>
+                                    </label>
+                                    <label className="radio-label">
+                                        <input type="radio" name="plusOne" value="no" checked={formData.plusOne === 'no'} onChange={handleChange} />
+                                        <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
 
-                    {formData.plusOne === 'yes' && (
-                        <div className="form-group animate-in">
-                            <label htmlFor="plusOneName">Plus One Name</label>
-                            <input type="text" id="plusOneName" name="plusOneName" required value={formData.plusOneName} onChange={handleChange} placeholder="Enter their full name" />
-                        </div>
+                            {formData.plusOne === 'yes' && (
+                                <div className="form-group animate-in">
+                                    <label htmlFor="plusOneName">Plus One Name</label>
+                                    <input type="text" id="plusOneName" name="plusOneName" required value={formData.plusOneName} onChange={handleChange} placeholder="Enter their full name" />
+                                </div>
+                            )}
+                        </>
                     )}
 
                     <div className="form-group">
@@ -111,7 +115,17 @@ const RSVP = () => {
                 </form>
             </div>
 
-            {showSuccess && <SuccessModal onClose={() => setShowSuccess(false)} formData={formData} />}
+            {showSuccess && <SuccessModal onClose={() => {
+                setShowSuccess(false);
+                setFormData({
+                    name: '',
+                    email: '',
+                    attending: 'yes',
+                    plusOne: 'no',
+                    plusOneName: '',
+                    dietary: ''
+                });
+            }} formData={formData} />}
         </section>
     );
 };

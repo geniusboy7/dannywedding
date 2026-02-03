@@ -14,7 +14,7 @@ export const WEDDING_DETAILS = {
     location: "Accra, Ghana",
     rsvpDeadline: "June 30th, 2026",
     targetDate: "2026-08-08T15:30:00",
-    mapsUrl: "https://maps.app.goo.gl/RymdHm8ajcAFk6nb8",
+    mapsUrl: "https://maps.app.goo.gl/a3ij18RY6yqjSVNk8",
     dressCode: "Formal or Modern African Wear",
     initials: "P & D"
 };

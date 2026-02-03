@@ -6,7 +6,7 @@ This document outlines the central locations for all reusable functions, utiliti
 
 ### Wedding Details
 - **Location**: `src/constants/wedding.js`
-- **Description**: Contains all static information about the wedding (names, date, venue, location, RSVP deadline).
+- **Description**: Contains all static information about the wedding (names, date, venue, location, RSVP deadline, Google Maps URL, dress code).
 - **Callers**: `Hero.jsx`, `Details.jsx`, `SuccessModal.jsx`, `Countdown.jsx`, `App.jsx`, `ImageSlider.jsx` (for captions).
 
 ### Galleries

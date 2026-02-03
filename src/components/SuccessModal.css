@@ -202,3 +202,14 @@
         width: 280px;
     }
 }
+
+/* Decline RSVP Section */
+.decline-section {
+    padding: 2rem 0;
+}
+
+.decline-msg {
+    font-size: 1.1rem;
+    color: var(--coffee-brown);
+    line-height: 1.6;
+}
